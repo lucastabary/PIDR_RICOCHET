@@ -75,6 +75,17 @@ x_data_RS2 = RS2_plantes.loc[:,"350":"2500"].to_numpy()
 for k in x_data_RS2: 
     fill.plot(wavelength,k,color='Black',alpha = 0.3)
 
+# ajouter une légende représentative (une entrée par traitement)
+from matplotlib.lines import Line2D
+legend_elements = [
+    Line2D([0], [0], color='Red', lw=2, label='C'),
+    Line2D([0], [0], color='Blue', lw=2, label='SS1'),
+    Line2D([0], [0], color='Green', lw=2, label='SS2'),
+    Line2D([0], [0], color='yellow', lw=2, label='RS1'),
+    Line2D([0], [0], color='Black', lw=2, label='RS2'),
+]
+fill.legend(handles=legend_elements, loc='upper right')
+
 plt.show()
 
 # -----------------------------------------------------------------------------
